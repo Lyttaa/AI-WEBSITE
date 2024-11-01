@@ -1,0 +1,103 @@
+/* Basic Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #030202;
+    color: #d7d3cc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #6d8fb3;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #d7d3cc;
+}
+
+/* Website List */
+.website-list {
+    display: grid;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+}
+
+.website-item {
+    background: #2d2f5f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.6s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit; /* Inherit color from body to keep text consistent */
+    display: block;
+}
+
+.website-item h2 {
+    color: #6d8fb3;
+    margin-bottom: 8px;
+}
+
+.website-item p {
+    margin-bottom: 12px;
+    color: #d7d3cc;
+}
+
+/* Scroll Animation */
+@keyframes slideInUp {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.website-item.animate {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+/* Hover Animation */
+.website-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Click Animation */
+@keyframes clickEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.website-item:active {
+    animation: clickEffect 0.2s ease;
+}
